@@ -1,0 +1,16 @@
+t - test cases
+n m k
+  |- n: numero de partes
+  |- m: quantidade de cores
+  |- k: qnt de vezes que BOb pode repintar
+ 
+poblem: evitar que Bob consiga deixar a fita de uma cor só
+
+1 1 1 : inevitavel
+5 1 1 : invevitavel (a fita tem 5 partes mas só existe uma cor)
+5 2 1 : branco (preto)->branco branco preto branco >>> evitavel
+5 2 2 : branco (preto)->branco branco (preto)->branco branco >> inevitavel
+5 5 3 : branco preto verde amarelo azul -> evitavel
+
+hipotese: se (n % m <= k || m == 1) é inevitavel
+  
