@@ -3,6 +3,41 @@ using namespace std;
 
 void solve(){
     string s; cin >> s;
+    int n = s.size();
+    int numOfBlocks = 0;
+    int ZeroAndOne = false;
+    for(int i=0; i<n ; ){
+        //11010
+        if(s[i] == '0'){
+            while(s[i] == '0' && i<n){
+                i++;
+            }
+            //cout << "marcador1" << endl;
+            ++numOfBlocks;
+        }else{
+            while(s[i] == '1' && i<n){
+                ++i;
+            }
+            ++numOfBlocks;
+            //cout << "marcador2" << endl;
+        }
+ 
+        if(s[i] == '1' && s[i-1] == '0')
+            ZeroAndOne = true;
+    }
+    cout << numOfBlocks - ZeroAndOne << endl;
+}
+
+int main(){
+    int t; cin >> t;
+    while(t){
+        solve();
+        --t;
+    }
+}
+/*
+void solve(){
+    string s; cin >> s;
     int l=0, r=0;
     int qntPieces=0;
     int it=0;
@@ -39,11 +74,4 @@ void solve(){
 
     cout << qntPieces << endl;
 }
-
-int main(){
-    int t; cin >> t;
-    while(t){
-        solve();
-        --t;
-    }
-}
+*/
